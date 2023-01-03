@@ -13,11 +13,7 @@ class Program
         if (grade >= 90)
         {
             letter = ("A");
-            if (grade >= 97)
-            {
-                sign = ("+");
-            }
-            else if (grade < 93)
+            if (grade < 93)
             {
                 sign = ("-");
             }
@@ -26,7 +22,7 @@ class Program
         else if (grade < 90 && grade >= 80)
         {
             letter = ("B");
-            if (grade > 87)
+            if (grade >= 87)
             {
                 sign = ("+");
             }
@@ -38,7 +34,7 @@ class Program
         else if (grade < 80 && grade >= 70)
         {
             letter = ("C");
-            if (grade > 77)
+            if (grade >= 77)
             {
                 sign = ("+");
             }
@@ -50,7 +46,7 @@ class Program
         else if (grade < 70 && grade >= 60)
         {
             letter = ("D");
-            if (grade > 67)
+            if (grade >= 67)
             {
                 sign = ("+");
             }
@@ -64,9 +60,11 @@ class Program
             letter = ("F");
         }
 
+
         {
             Console.WriteLine($"Your grade is an {letter}{sign}.");
         }
+
 
         if (grade >= 70)
         {
