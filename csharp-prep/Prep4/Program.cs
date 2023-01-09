@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -9,6 +10,7 @@ class Program
        int userNumber = -1;
        int runningTotal = 0;
        int largestNum = -1;
+       int smallestNum = 100;
 
        Console.WriteLine("Enter a list of numbers. Type 0 when finished.");
 
@@ -45,6 +47,24 @@ class Program
             }
         }
         Console.WriteLine($"The largest number is {largestNum}.");
-    }
 
+        foreach (int number in numbers)
+        {
+            if (number < smallestNum)
+            {
+                if (number > 0)
+                {
+                    smallestNum = number;
+                }
+            }  
+        }
+        Console.WriteLine($"The smallest positive number is {smallestNum}.");
+
+        numbers.Sort();
+        Console.WriteLine("These are the numbers sorted.");
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
+    }
 }
