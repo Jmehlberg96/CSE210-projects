@@ -26,6 +26,8 @@ class Program
         
         myResume.ResumeDetails();
         myResume.DisplayResume();
+        
+        Console.WriteLine(myResume._jobs[0]._jobTitle);
 
     }
 }
