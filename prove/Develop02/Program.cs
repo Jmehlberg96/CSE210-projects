@@ -20,6 +20,7 @@ class Program
             Console.WriteLine("5. Exit");
             Console.WriteLine();
             Console.Write("What would you like to do? ");
+            userResponse = Console.ReadLine();
             
             Console.WriteLine();
 
