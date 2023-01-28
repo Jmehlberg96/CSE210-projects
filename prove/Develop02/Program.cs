@@ -7,6 +7,8 @@ class Program
     {
        string userResponse = "5";
        
+       Journal journal = new Journal();
+       
 
         do{
             Console.WriteLine();
@@ -23,9 +25,6 @@ class Program
             userResponse = Console.ReadLine();
             
             Console.WriteLine();
-
-            Journal journal = new Journal();
-            Entry entry = new Entry();
 
             if (userResponse == "1"){
                journal.AddEntry();     

@@ -5,21 +5,22 @@ public class Journal{
     
   public List<Entry>_entries = new List<Entry>();
 
-    Entry entry = new Entry();
-
     
 
     public void AddEntry(){
-  
+         Entry entry = new Entry();
 
-         entry._date = entry.DisplayDate();
+         string date = entry.DisplayDate();
+         entry._date = date;
           
           string prompt = entry.GetRandomPrompt();
           Console.WriteLine($"{prompt}");
+        
           entry._prompt = prompt;
 
           Console.Write("> ");
-          entry._response = Console.ReadLine();
+          string response = Console.ReadLine();
+          entry._response = response;
             
 
           _entries.Add(entry);
@@ -27,46 +28,55 @@ public class Journal{
 
 
     public void DisplayJournal(){
-
+        foreach(Entry entry in _entries){
        Console.WriteLine();
        entry.EntryDetails();
+       Console.WriteLine();
+    }
     }
 
 
 
     public void LoadJournal(){
-
-        string fileName = "journal.txt";
         _entries.Clear();
-        string[] entries = System.IO.File.ReadAllLines(fileName);
 
-        // to load the entries from a txt file
-        foreach (string line in entries){
-            string[] parts = line.Split(",");
-            entry._date = parts[0];
-            entry._prompt = parts[1];
-            entry._response = parts[2];
+         Console.Write("What is the name of your file? ");
+            string fileName = Console.ReadLine();
+        String line;
+        try{
+            using(StreamReader sr = new StreamReader(fileName)){
+                line = sr.ReadLine();
+                while(line != null){
+                    string[] entryLines = line.Split('|');
+                        Entry entry = new Entry();
 
-            _entries.Add(entry);
+                        entry._date = entryLines[0];
+                        entry._prompt = entryLines[1];
+                        entry._response = entryLines[2];
+
+                         _entries.Add(entry);
+
+                        Console.WriteLine(line);
+                        line = sr.ReadLine();
+               };
+              
+            }
         }
-        
-    }
-
-    public void SaveJournal(){
-
-        string fileName = "journal.txt";
-
-        using (StreamWriter outputFile = File.CreateText(fileName))
+        catch(Exception e)
         {
-            // to output the entries to a txt file
-             for (int i = 0; i < _entries.Count; i++){
-            outputFile.WriteLine(_entries[i]);
+            Console.WriteLine("Exception:" + e.Message);
         }
-        
-            
-        }
-            
+
     }
+
+        public void SaveJournal(){
+            Console.Write("What is the name of your file? ");
+            string fileName = Console.ReadLine();
+
+            using(StreamWriter sw = new StreamWriter(fileName)){
+                foreach(Entry line in _entries){
+                    sw.WriteLine($"{line._date} | {line._prompt} | {line._response}" );
+
+            }}
+        }
 }
-
-

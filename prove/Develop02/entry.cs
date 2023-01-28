@@ -6,7 +6,6 @@ public class Entry{
   public string _response;
   public string _prompt;
 
-  public List<string>_entries = new List<string>();
 
 
 
