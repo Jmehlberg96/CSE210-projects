@@ -1,8 +1,8 @@
 
 public class Scripture
 {
-    private  Reference _reference;
-    private List<Word> _scriptureWords = new List<Word>();   
+    private Reference _reference;
+    private List<Word> _scriptureWords = new List<Word>();
     public Scripture()
     {
     }
@@ -10,12 +10,12 @@ public class Scripture
     {
         _reference = new Reference(bookName, chapter, vs1, vs2);
 
-        foreach(string w in text1.Split(" "))
+        foreach (string w in text1.Split(" "))
         {
             Word word = new Word(w);
             _scriptureWords.Add(word);
         }
-        foreach(string w in text2.Split(" "))
+        foreach (string w in text2.Split(" "))
         {
             Word word = new Word(w);
             _scriptureWords.Add(word);
@@ -23,10 +23,11 @@ public class Scripture
     }
     public void HideRandomWord()
     {
-        if(!IsCompletelyHidden())
+        if (!IsCompletelyHidden())
         {
             bool wordHidden = false;
-            do{
+            do
+            {
                 var countWord = _scriptureWords.Count();
                 Random r = new Random();
                 int rIndex = r.Next(0, countWord);
@@ -36,26 +37,27 @@ public class Scripture
                     word.HideWord();
                     wordHidden = true;
                 }
-            }while(!wordHidden);
+            } while (!wordHidden);
         }
     }
     public void GetRenderedText()
     {
-        foreach(Word word in _scriptureWords)
+        foreach (Word word in _scriptureWords)
         {
             Console.Write(word.GetWordText() + " ");
-        } 
+        }
     }
     public bool IsCompletelyHidden()
     {
         bool isCompletelyHidden = true;
-        foreach(Word word in _scriptureWords)
+        foreach (Word word in _scriptureWords)
         {
-            if(word.IsShown())
+            if (word.IsShown())
             {
                 isCompletelyHidden = false;
             }
-        }return isCompletelyHidden;
+        }
+        return isCompletelyHidden;
     }
     public Reference GetReference()
     {

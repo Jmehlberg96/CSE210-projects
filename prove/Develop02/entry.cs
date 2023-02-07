@@ -32,8 +32,6 @@ public class Entry
         string dateText = theCurrentTime.ToShortDateString();
         return dateText;
     }
-
-
 }
 
 

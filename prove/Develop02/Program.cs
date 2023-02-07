@@ -19,7 +19,8 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("5. Add New Prompt");
+            Console.WriteLine("6. Exit");
             Console.WriteLine();
             Console.Write("What would you like to do? ");
             userResponse = Console.ReadLine();
@@ -40,7 +41,6 @@ class Program
             }
 
         }while(userResponse != "5");
-
 
     }
     
