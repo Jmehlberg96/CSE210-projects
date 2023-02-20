@@ -3,9 +3,11 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _scriptureWords = new List<Word>();
+
     public Scripture()
     {
     }
+
     public Scripture(string bookName, string chapter, string vs1, string vs2, string text1, string text2)
     {
         _reference = new Reference(bookName, chapter, vs1, vs2);
@@ -15,17 +17,20 @@ public class Scripture
             Word word = new Word(w);
             _scriptureWords.Add(word);
         }
+
         foreach (string w in text2.Split(" "))
         {
             Word word = new Word(w);
             _scriptureWords.Add(word);
         }
     }
+
     public void HideRandomWord()
     {
         if (!IsCompletelyHidden())
         {
             bool wordHidden = false;
+
             do
             {
                 var countWord = _scriptureWords.Count();
@@ -40,6 +45,7 @@ public class Scripture
             } while (!wordHidden);
         }
     }
+
     public void GetRenderedText()
     {
         foreach (Word word in _scriptureWords)
@@ -47,9 +53,11 @@ public class Scripture
             Console.Write(word.GetWordText() + " ");
         }
     }
+
     public bool IsCompletelyHidden()
     {
         bool isCompletelyHidden = true;
+        
         foreach (Word word in _scriptureWords)
         {
             if (word.IsShown())
@@ -59,6 +67,7 @@ public class Scripture
         }
         return isCompletelyHidden;
     }
+
     public Reference GetReference()
     {
         return _reference;
