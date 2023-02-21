@@ -2,8 +2,8 @@ using System;
 
 public class Reflecting : Activity
 {
-    protected string _prompt;
-    protected string _question;
+    private string _prompt;
+    private string _question;
     private ReflectingGen _promptGen;
     private QuestionGen _questionGen;
 
@@ -47,7 +47,7 @@ public class Reflecting : Activity
 
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.WriteLine("");
-        
+
         Console.Write("You may begin in: ");
         Console.Write("5");
         Thread.Sleep(1000);
