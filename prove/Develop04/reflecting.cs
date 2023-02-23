@@ -48,22 +48,12 @@ public class Reflecting : Activity
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.WriteLine("");
 
-        Console.Write("You may begin in: ");
-        Console.Write("5");
+       for(int i = 5; i > 0; i--)
+       {
+        Console.Write($"\rYou may begin in: {i}");
         Thread.Sleep(1000);
-        Console.Write("\b \b");
-        Console.Write("4");
-        Thread.Sleep(1000);
-        Console.Write("\b \b");
-        Console.Write("3");
-        Thread.Sleep(1000);
-        Console.Write("\b \b");
-        Console.Write("2");
-        Thread.Sleep(1000);
-        Console.Write("\b \b");
-        Console.Write("1");
-        Thread.Sleep(1000);
-        Console.Write("\b \b");
+       }
+        Console.WriteLine("");
         Console.Clear();
 
         CountDownTimer(_seconds);
