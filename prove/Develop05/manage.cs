@@ -11,7 +11,6 @@ public class ManageGoals
         _goals = new List<Goal>();
     }
 
-
     public void SaveGoals(List<Goal> goals, int points)
     {
         Console.Write("What is the name of your file? ");

@@ -13,7 +13,9 @@ public class Checklist : Goal
         _currentCount = 0;
         _bonusPoints = 0;
     }
-         public Checklist(string name, string description, int points,bool isComplete, int currentCount, int targetCount, int bonusPoints){
+
+    public Checklist(string name, string description, int points,bool isComplete, int currentCount, int targetCount, int bonusPoints)
+    {
         _name = name;
         _description = description;
         _points = points;
@@ -21,7 +23,6 @@ public class Checklist : Goal
         _targetCount = targetCount;
         _currentCount = currentCount;
         _bonusPoints = bonusPoints;
-
     }
 
     public void  SetBonus()
@@ -31,6 +32,7 @@ public class Checklist : Goal
         Console.Write("What is the bonus for accomplishing it that many times? ");
         _bonusPoints = int.Parse(Console.ReadLine());
     }
+    
       public override void ShowGoal(int goalNumber)
     {
          string checkString = " ";

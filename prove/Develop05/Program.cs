@@ -70,6 +70,7 @@ class Program
                 
                 }
             }
+
             if (choice == "2")
             {
                 int x = 0;
@@ -81,12 +82,14 @@ class Program
                 Console.WriteLine("");
             
             }
+
             if (choice == "3")
             {
                 ManageGoals manage = new ManageGoals();
                 manage.SaveGoals(goals, points);
                 Console.WriteLine("");
             }
+
             if (choice == "4")
             {
                 ManageGoals manage = new ManageGoals();
@@ -95,6 +98,7 @@ class Program
                 points = manage.GetPoints();
                 Console.WriteLine("");
             }
+
             if (choice == "5")
             {
                 Console.WriteLine("The goals are: ");
@@ -113,6 +117,7 @@ class Program
                 Console.WriteLine($"You now have {points}");
                 Console.WriteLine("");
             }
+
             if (choice == "6")
             {
                 Console.WriteLine("The goals are: ");
@@ -128,11 +133,7 @@ class Program
                 ManageGoals  manage = new ManageGoals();
                 manage.DeleteGoal(goals, goalToDelete);
                 Console.WriteLine("");
-            }
-            
-
+            } 
         }
-
-
     }
 }

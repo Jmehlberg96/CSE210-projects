@@ -6,7 +6,9 @@ public class Eternal : Goal
     {
         _isComplete = false;
     }
-         public Eternal(string name, string description, int points, bool isComplete){
+
+    public Eternal(string name, string description, int points, bool isComplete)
+    {
         _name = name;
         _description = description;
         _points = points;
@@ -16,6 +18,7 @@ public class Eternal : Goal
        public override void RecordEvent()
     {
     }
+
      public override string GetGoalString()
     {
         string goal = $"EternalGoal|{_name}|{_description}|{_points}|{_isComplete}";

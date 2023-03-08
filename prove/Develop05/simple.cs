@@ -6,7 +6,9 @@ public class Simple : Goal
     {
         _isComplete = false;
     } 
-        public Simple(string name, string description, int points, bool isComplete){
+    
+    public Simple(string name, string description, int points, bool isComplete)
+    {
         _name = name;
         _description = description;
         _points = points;
