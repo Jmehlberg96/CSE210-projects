@@ -15,9 +15,7 @@ public class Eternal : Goal
         _isComplete = isComplete;
     }
     
-       public override void RecordEvent()
-    {
-    }
+       public override void RecordEvent(){}
 
      public override string GetGoalString()
     {

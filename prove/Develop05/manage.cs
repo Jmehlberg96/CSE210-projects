@@ -74,9 +74,38 @@ public class ManageGoals
     public int GetPoints(){
         return _points;
     }
-    public void DeleteGoal(List<Goal> goals, Goal goalToDelete)
+    public void DeleteGoal(List<Goal> goals)
     {
-       goals.Remove(goalToDelete);
+       //goals.Remove(goalToDelete);
+       Console.WriteLine("The goals are: ");
+                int x = 0;
+                foreach(Goal goal in goals)
+                {
+                    x++;
+                    goal.ShowGoalSimple(x);
+                }
+                Console.Write("Which goal would you like to delete? ");
+                int deleteChoice = int.Parse(Console.ReadLine());
+                Goal goalToDelete = goals[deleteChoice -1];
+                goals.Remove(goalToDelete);
+                Console.WriteLine("");
+    }
+    public void GetRecordEvent(List<Goal> goals){
+        Console.WriteLine("The goals are: ");
+                int x = 0;
+                foreach(Goal goal in goals)
+                {
+                    x++;
+                    goal.ShowGoalSimple(x);
+                }
+                Console.Write("Which goal would you like to record? ");
+                int input = int.Parse(Console.ReadLine());
+                Goal selectedGoal = goals[input-1];
+                selectedGoal.RecordEvent();
+                _points = GetPoints() + selectedGoal.GetPoints();
+                Console.WriteLine($"Congratulation you have earned {selectedGoal.GetPoints()}");
+                Console.WriteLine($"You now have {_points}");
+                Console.WriteLine("");
     }
     
 

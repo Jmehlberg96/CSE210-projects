@@ -33,4 +33,5 @@ public class Simple : Goal
         string goal = $"SimpleGoal|{_name}|{_description}|{_points}|{_isComplete}";
         return goal;
     }
+    
 }

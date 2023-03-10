@@ -1,6 +1,6 @@
 using System;
 
-public abstract class Goal
+public class Goal
 {
     protected string _name;
     protected string _description;
@@ -71,4 +71,5 @@ public abstract class Goal
         string goal = $"{_name}|{_description}|{_points}|{_isComplete}";
         return goal;
     }
+
 }
