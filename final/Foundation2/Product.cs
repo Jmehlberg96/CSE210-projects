@@ -1,31 +1,37 @@
 using System;
 
 class Product {
-    private string _name;
+    private string _item;
     private int _productId;
     private double _price;
     private int _quantity;
 
-    public Product(string name, int productId, double price, int quantity) 
+    public Product(string item, int productId, double price, int quantity) 
     {
-        this._name = name;
+        this._item = item;
         this._productId = productId;
         this._price = price;
         this._quantity = quantity;
     }
 
-    public double Price 
+    public double Price() 
     {
-        get { return _price * _quantity; }
+        return _price * _quantity;
     }
 
-    public string Name 
+    public string Item() 
     {
-        get { return _name; }
+        return _item; 
     }
 
-    public int ProductId 
+    public int ProductId() 
     {
-        get { return _productId; }
+         return _productId;
     }
+
+    public double CalculatePrice()
+    {
+        return _price * _quantity;
+    }
+
 }

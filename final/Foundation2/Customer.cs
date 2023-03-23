@@ -13,11 +13,13 @@ class Customer {
         return _address.IsInUSA();
     }
 
-    public string Name {
-        get { return _name; }
+    public string Name() 
+    {
+        return _name; 
     }
 
-    public Address Address {
-        get { return _address; }
+    public Address Address () 
+    {
+        return _address;
     }
 }

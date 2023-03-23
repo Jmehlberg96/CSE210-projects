@@ -1,4 +1,4 @@
-// using System;
+using System;
 
 
 class Address {
@@ -17,8 +17,9 @@ class Address {
         
     }
 
-    public string FullAddress {
-        get { return $"   {_street}\n   {_city}, {_state} {_zipCode}\n   {_country}"; }
+    public string FullAddress ()
+    {
+         return $"   {_street}\n   {_city}, {_state} {_zipCode}\n   {_country}"; 
     }
 
     public bool IsInUSA() {
