@@ -30,7 +30,7 @@ class Program
         // Iterate through the list of videos and display their information
         foreach (Video video in videos)
         {
-            Console.WriteLine("Title: {0}", video._title);
+            Console.WriteLine("\nTitle: {0}", video._title);
             Console.WriteLine("Author: {0}", video._author);
             Console.WriteLine("Length: {0} seconds", video._length);
             Console.WriteLine("Number of Comments: {0}", video.GetNumberOfComments());
@@ -39,7 +39,8 @@ class Program
             {
                 Console.WriteLine("{0}: {1}", comment._name, comment._text);
             }
-            Console.WriteLine();
+           
+            Console.WriteLine("---------------------------------------------------");
         }
     }
 }
