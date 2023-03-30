@@ -5,8 +5,7 @@ class Program {
     static void Main(string[] args) 
     {
         Console.Clear();
-        Console.WriteLine("Foundation 2: Products\n");
-        
+        Console.WriteLine("\nFoundation 2: Products\n"); 
         //Order 1 
         Address address1 = new Address("123 Main St", "New York", "NY", "10001", "USA");
         Customer customer1 = new Customer("John Smith", address1);

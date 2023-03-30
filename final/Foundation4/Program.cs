@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
-        Console.WriteLine();
+        Console.WriteLine("\nFoundation 4: Exercise Activities\n");
         // Create a list of activities
         List<Activity> activities = new List<Activity>();
 

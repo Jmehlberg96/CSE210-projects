@@ -6,7 +6,7 @@ class Program
     {
         // Create a list to store the videos
         List<Video> videos = new List<Video>();
-
+        Console.WriteLine("\nFoundation 1: YouTube Video\n");
         // Create 3-4 videos and add comments for each
         Video video1 = new Video("Five Messages That All of God’s Children Need to Hear| Dieter F. Uchtdorf | 2021", "BYU Speeches", 2101);
         video1.AddComment("Mariah Baird", "\n  'The lord often accomplishes the most, with those who feel the least accomplished.'\n   I needed to hear that today. Definitely an answer to a prayer.\n");
@@ -34,7 +34,8 @@ class Program
             Console.WriteLine("Author: {0}", video._author);
             Console.WriteLine("Length: {0} seconds", video._length);
             Console.WriteLine("Number of Comments: {0}", video.GetNumberOfComments());
-            Console.WriteLine("Comments:");
+            Console.WriteLine("- - - - - - - ");
+            Console.WriteLine("Comments:\n");
             foreach (Comment comment in video._comments)
             {
                 Console.WriteLine("{0}: {1}", comment._name, comment._text);
