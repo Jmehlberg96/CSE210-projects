@@ -39,7 +39,6 @@ class Program
             {
                 Console.WriteLine("{0}: {1}", comment._name, comment._text);
             }
-           
             Console.WriteLine("---------------------------------------------------");
         }
     }

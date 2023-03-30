@@ -13,8 +13,7 @@ class Address {
         this._city = city;
         this._state = state;
         this._zipCode = zip;
-        this._country = country;
-        
+        this._country = country;    
     }
 
     public string FullAddress ()
